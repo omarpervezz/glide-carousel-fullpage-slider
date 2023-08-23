@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+        <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
+    </head>
+    <body>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                --height: 100vh;
+                overflow-x: hidden;
+            }
+
+            .glide {
+                width: 100%;
+                height: 100%;
+                height: var(--height);
+                overflow: hidden;
+                margin: auto;
+                position: relative;
+            }
+
+            .glide .glide__track {
+                height: 100%;
+            }
+
+            .glide ul {
+                height: 100%;
+                display: flex;
+                list-style-type: none;
+            }
+
+            .glide ul li {
+                /* margin-left: 0px !important;
+                margin-right: 0px !important; */
+                max-width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .glide ul li img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .glide .glide__arrows .glide__arrow {
+                position: absolute;
+                top: calc(var(--height) * 0.5);
+                font-size: 2.5rem;
+                cursor: pointer;
+                background: transparent;
+                color: white;
+                border: none;
+                outline: none;
+            }
+
+            .glide .glide__arrows .glide__arrow--left {
+                left: 17px;
+            }
+
+            .glide .glide__arrows .glide__arrow--right {
+                right: 17px;
+            }
+        </style>
+        <div class="glide">
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    <li class="glide__slide">
+                        <img src="./img/wallpaperflare.com_wallpaper.jpg" alt="1">
+                    </li>
+                    <li class="glide__slide">
+                        <img src="./img/wallpaperflare.com_wallpaper (1).jpg" alt="2">
+                    </li>
+                    <li class="glide__slide">
+                        <img src="./img/wallpaperflare.com_wallpaper (2).jpg" alt="3">
+                    </li>
+                    <li class="glide__slide">
+                        <img src="./img/wallpaperflare.com_wallpaper (3).jpg" alt="4">
+                    </li>
+                    <li class="glide__slide">
+                        <img src="./img/wallpaperflare.com_wallpaper (4).jpg" alt="5">
+                    </li>
+                    <li class="glide__slide">
+                        <img src="./img/wallpaperflare.com_wallpaper (5).jpg" alt="6">
+                    </li>
+                </ul>
+            </div>
+            <div class="glide__arrows" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--left" data-glide-dir="<">&leftarrow;</button>
+                <button class="glide__arrow glide__arrow--right" data-glide-dir=">">&rightarrow;</button>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+        <script>
+            new Glide('.glide',{
+                type: 'carousel',
+                startAt: 0,
+                perView: 1,
+                gap: 2,
+                
+            }).mount()
+        </script>
+    </body>
+</html>
